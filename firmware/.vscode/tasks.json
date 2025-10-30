@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cmake -DCMAKE_BUILD_TYPE=Debug .. && make -j$(nproc)",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "dependsOn": "create-build-dir",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "create-build-dir",
+            "type": "shell",
+            "command": "mkdir -p build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

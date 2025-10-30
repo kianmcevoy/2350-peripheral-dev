@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/build/_deps/pico_sdk-src/src/**",
+                "${workspaceFolder}/system/include",
+                "${workspaceFolder}/hardware/include",
+                "${workspaceFolder}/engine/include",
+                "${workspaceFolder}/instrument/include",
+                "${workspaceFolder}/interface/include"
+            ],
+            "defines": [
+                "PICO_BOARD=solderparty_rp2350_stamp_xl",
+                "SYSTEM_RP2350=1",
+                "Sample=float"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

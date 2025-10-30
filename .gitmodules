@@ -1,0 +1,6 @@
+[submodule "shared/isl"]
+	path = shared/isl
+	url = https://github.com/InstruoModular/isl.git
+[submodule "firmware/system"]
+	path = firmware/system
+	url = https://github.com/InstruoModular/rp2350-system.git
