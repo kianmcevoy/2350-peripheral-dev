@@ -1,5 +1,6 @@
 #include "engine/engine.hpp"
 #include "system/log.hpp"
+#include "pico/time.h"
 
 Engine::Engine()
 {
@@ -72,4 +73,6 @@ void Engine::process()
 	}
 
 	hardware.process_output(hardware_output_data);
+
+	sleep_ms(200);
 }
