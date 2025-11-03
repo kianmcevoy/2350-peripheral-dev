@@ -5,7 +5,7 @@
 #include "system/adc.hpp"
 
 //GPIO Pin Definitions
-enum class PinName : uint8_t
+enum class GPIO_Name : uint8_t
 {
 	button_1 = 7,
 	button_2 = 6,
@@ -15,18 +15,18 @@ enum class PinName : uint8_t
 	led_3 = 32
 };
 
-static constexpr std::array<GPIOPinDef, 6> pin_defs = 
+static constexpr std::array<GPIOPinDef, 6> pin_defs =
 {{
-	{PinName::button_1, GPIODirection::INPUT, GPIOPull::UP},
-	{PinName::button_2, GPIODirection::INPUT, GPIOPull::UP},
-	{PinName::button_3, GPIODirection::INPUT, GPIOPull::UP},
-	{PinName::led_1, GPIODirection::OUTPUT, GPIOPull::NONE},
-	{PinName::led_2, GPIODirection::OUTPUT, GPIOPull::NONE},
-	{PinName::led_3, GPIODirection::OUTPUT, GPIOPull::NONE}
+	{GPIO_Name::button_1, GPIODirection::INPUT, GPIOPull::UP},
+	{GPIO_Name::button_2, GPIODirection::INPUT, GPIOPull::UP},
+	{GPIO_Name::button_3, GPIODirection::INPUT, GPIOPull::UP},
+	{GPIO_Name::led_1, GPIODirection::OUTPUT, GPIOPull::NONE},
+	{GPIO_Name::led_2, GPIODirection::OUTPUT, GPIOPull::NONE},
+	{GPIO_Name::led_3, GPIODirection::OUTPUT, GPIOPull::NONE}
 }};
 
 //ADC Pin Definitions
-enum class ADCName : uint8_t
+enum class ADC_Name : uint8_t
 {
 	pot_1 = 4,
 	pot_2 = 2,
@@ -36,14 +36,14 @@ enum class ADCName : uint8_t
 	pot_6 = 3
 };
 
-static constexpr std::array<ADCDescription, 6> adc_descriptors = 
+static constexpr std::array<ADCDescription, 6> adc_descriptors =
 {{
-	{ADCName::pot_1, 44},
-	{ADCName::pot_2, 42},
-	{ADCName::pot_3, 47},
-	{ADCName::pot_4, 46},
-	{ADCName::pot_5, 45},
-	{ADCName::pot_6, 43}
+	{ADC_Name::pot_1, 44},
+	{ADC_Name::pot_2, 42},
+	{ADC_Name::pot_3, 47},
+	{ADC_Name::pot_4, 46},
+	{ADC_Name::pot_5, 45},
+	{ADC_Name::pot_6, 43}
 }};
 
 

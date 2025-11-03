@@ -15,7 +15,7 @@ class Hardware
 
 		void process_input(HardwareInputData& input);
 		void process_output(const HardwareOutputData& output);
-	
+
 	private:
 
 		uint16_t last_value[6]{0};
@@ -25,11 +25,11 @@ class Hardware
 		bool button_state_2 = true;
 		bool button_state_3 = false;
 
-		GPIOPinMap gpio_map = GPIOPinMap{.pins = std::span<const GPIOPinDef>{pin_defs}};
+		GPIO_Init GPIO_Init = GPIO_Init{.pins = std::span<const GPIOPinDef>{pin_defs}};
 		GPIO gpio;
 
-		ADCPinMap adc_map = ADCPinMap{.adc_descriptors = std::span<const ADCDescription>{adc_descriptors}};
-		ADC adc;		
+		ADC_Init ADC_Init = ADC_Init{.adc_descriptors = std::span<const ADCDescription>{adc_descriptors}};
+		ADC adc;
 };
 
 #endif // HARDWARE_HPP

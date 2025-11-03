@@ -1,12 +1,12 @@
 #include "hardware/hardware.hpp"
-#include "pico/stdlib.h" 
+#include "pico/stdlib.h"
 #include "system/log.hpp"
 #include "hardware/adc.h"
 
 Hardware::Hardware()
 {
-	gpio.init(gpio_map);
-	adc.init(adc_map);
+	gpio.init(GPIO_Init);
+	adc.init(ADC_Init);
 }
 
 void Hardware::process_input(HardwareInputData& input)
@@ -16,48 +16,48 @@ void Hardware::process_input(HardwareInputData& input)
 	button_state_3 = !gpio.read(PinName::button_3);
 
 
-	unsigned value = adc.read(ADCName::pot_1);
-	if(value > last_value[0] + threshold || value + threshold < last_value[0]) 
+	unsigned value = adc.read(ADC_Name::pot_1);
+	if(value > last_value[0] + threshold || value + threshold < last_value[0])
 	{
 		log_debug("Pot 1 value: %u\n", value);
 		last_value[0] = value;
 	}
 
-	value = adc.read(ADCName::pot_2);
-	if(value > last_value[1] + threshold || value + threshold < last_value[1]) 
+	value = adc.read(ADC_Name::pot_2);
+	if(value > last_value[1] + threshold || value + threshold < last_value[1])
 	{
 		log_debug("Pot 2 value: %u\n", value);
 		last_value[1] = value;
 	}
 
-	value = adc.read(ADCName::pot_3);
-	if(value > last_value[2] + threshold || value + threshold < last_value[2]) 
+	value = adc.read(ADC_Name::pot_3);
+	if(value > last_value[2] + threshold || value + threshold < last_value[2])
 	{
 		log_debug("Pot 3 value: %u\n", value);
 		last_value[2] = value;
 	}
 
-	value = adc.read(ADCName::pot_4);
-	if(value > last_value[3] + threshold || value + threshold < last_value[3]) 
+	value = adc.read(ADC_Name::pot_4);
+	if(value > last_value[3] + threshold || value + threshold < last_value[3])
 	{
 		log_debug("Pot 4 value: %u\n", value);
 		last_value[3] = value;
 	}
 
-	value = adc.read(ADCName::pot_5);
-	if(value > last_value[4] + threshold || value + threshold < last_value[4]) 
+	value = adc.read(ADC_Name::pot_5);
+	if(value > last_value[4] + threshold || value + threshold < last_value[4])
 	{
 		log_debug("Pot 5 value: %u\n", value);
 		last_value[4] = value;
 	}
 
-	value = adc.read(ADCName::pot_6);
-	if(value > last_value[5] + threshold || value + threshold < last_value[5]) 
+	value = adc.read(ADC_Name::pot_6);
+	if(value > last_value[5] + threshold || value + threshold < last_value[5])
 	{
 		log_debug("Pot 6 value: %u\n", value);
 		last_value[5] = value;
 	}
-	
+
 }
 
 void Hardware::process_output(const HardwareOutputData& output)
