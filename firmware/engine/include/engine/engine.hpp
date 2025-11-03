@@ -22,7 +22,7 @@ class Engine
 	private:
 		void process();
 
-		bool audio_ready;
+		bool audio_ready{true};
 		Hardware hardware;
 		Instrument instrument;
 		StateInterface state_interface;
